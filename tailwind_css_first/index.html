@@ -1,23 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-    <title>Tailwind CSS - First - Basics</title>
-  </head>
-  <body>
-    <div>
-      <nav>
-        <img src="images/logo.png" alt="logo-img">
-        <ul>
-          <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
+<title>Tailwind CSS - First - Basics</title>
+</head>
+
+<body>
+  <div class="container min-h-screen bg-[url('images/image.png')] bg-center bg-cover px-28 py-5">
+    <nav class="flex">
+      <img src="images/logo.png" alt="logo-img" class="w-36">
+      <ul class="flex-1 text-center">
+        <li class="list-none inline-block px-5">
+          <a href="#" class="no-underline text-white px-2">Home</a>
+        </li>
+        <li class="list-none inline-block px-5">
+          <a href="#" class="no-underline text-white px-2">About</a>
+        </li>
+        <li class="list-none inline-block px-5">
+          <a href="#" class="no-underline text-white px-2">Features</a>
+        </li>
+        <li class="list-none inline-block px-5">
+          <a href="#" class="no-underline text-white px-2">Contact</a>
+        </li>
+      </ul>
+      <img src="images/cart.png" alt="cart-img" class="w-8">
+    </nav>
+    <div class="text-white mt-48 max-w-2xl">
+      <h1 class="text-4xl font-semibold leading-normal">
+        Food & Groceries <br><span class="font-extralight">quick pickup and delivery</span>
+      </h1>
+      <p>Wide range and variety of freshly cooked dishes, groceries incluing fresh vegetables, poultry, dairy, meats,
+        baked items and many more.</p>
     </div>
-  </body>
+    <div class="mt-10 text-white">
+      <a href="#"
+        class="text-black bg-yellow-300 rounded-3xl px-8 py-2 font-medium inline-block mr-4 hover:bg-transparent border border-yellow-300 hover:text-white duration-300">Order
+        Now</a>
+      <a href="#" class="">Download App
+        <span class="text-lg inline-block rotate-90">&#10148;</span>
+      </a>
+    </div>
+
+  </div>
+</body>
+
 </html>
