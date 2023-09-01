@@ -1,16 +1,23 @@
 import React from 'react';
 
-let name: string;
+let heading_name: string;
 
-name="hi";
+heading_name="Task App";
 
 
 function App() {
   return (
-    <div className="text-3xl font-bold text-red-600 text-center underline">
-      <span>
-        
+    <div className="w-screen h-screen flex flex-col items-center bg-teal-700 font-bold">
+      <span className='uppercase text-amber-200 my-8 mx-0 z-10 md:text-3xl font-bold text-center text-xl'>
+        {heading_name}
       </span>
+      <div>
+        name
+      </div>
+      <div>
+        heading_name
+      </div>
+        
     </div>
   );
 }
