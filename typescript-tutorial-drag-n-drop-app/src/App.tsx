@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import AddTodo from './components/AddTodo';
+import { Todo } from './models/models';
 
 const heading_name: string = 'Task App';
 
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>('');
+  const [todos, setTodos] = useState<Todo[]>([]);
+
   console.log(todo);
 
   return (
