@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import AddTodo from './components/AddTodo';
 import { Todo } from './models/models';
+import ListTodos from './components/ListTodos';
 
 const heading_name: string = 'Task App';
 
@@ -8,16 +9,14 @@ const App: React.FC = () => {
   const [todo, setTodo] = useState<string>('');
   const [todos, setTodos] = useState<Todo[]>([]);
 
-  //console.log(todo);
-
   //addTodoHandler function => fat arrow format
   const addTodoHandler = (e: React.FormEvent) => {
     e.preventDefault();
-    //set Todo
-    // if todo exist
+    /* //set Todo
+    // checking if todo exist */
     if (todo) {
-      // set the todo to the array
-      // spread the array
+      /* // set each new todo item to the array
+      // spread the array */
       setTodos([...todos, { id: Date.now(), todo: todo, isDone: false }]);
       setTodo('');
     }
@@ -29,6 +28,7 @@ const App: React.FC = () => {
         {heading_name}
       </span>
       <AddTodo todo={todo} setTodo={setTodo} addTodoHandler={addTodoHandler} />
+      <ListTodos todos={todos} setTodos={setTodos} />
     </div>
   );
 };
