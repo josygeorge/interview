@@ -18,7 +18,8 @@ const App: React.FC = () => {
     if (todo) {
       // set the todo to the array
       // spread the array
-      setTodos([{ id: Date.now(), todo: todo, isDone: false }]);
+      setTodos([...todos, { id: Date.now(), todo: todo, isDone: false }]);
+      setTodo('');
     }
   };
   console.log(todos);
