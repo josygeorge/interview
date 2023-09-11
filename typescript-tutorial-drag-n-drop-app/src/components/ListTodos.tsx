@@ -1,5 +1,6 @@
 import React from 'react';
 import { Todo } from '../models/models';
+import TodoCard from './TodoCard';
 
 interface Props {
   todos: Todo[];
@@ -10,7 +11,9 @@ const ListTodos: React.FC<Props> = ({ todos, setTodos }) => {
   return (
     <div>
       {todos.map((todo) => (
-        <li>{todo.todo}</li>
+        //here 'todo' is the entire object; not a string type
+        /* Listing each Todo as a card with edit and delete functionality*/
+        <TodoCard todo={todo} key={todo.id} todos={todos} setTodos={setTodos} />
       ))}
     </div>
   );
