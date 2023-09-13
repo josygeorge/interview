@@ -23,7 +23,7 @@ const App: React.FC = () => {
   };
   console.log(todos);
   return (
-    <div className='w-screen h-screen flex flex-col items-center bg-teal-700 font-bold'>
+    <div className='w-screen h-screen flex flex-col items-center bg-teal-600 font-bold'>
       <span className='uppercase text-amber-200 my-8 mx-0 z-10 md:text-3xl font-bold text-center text-xl'>
         {heading_name}
       </span>
