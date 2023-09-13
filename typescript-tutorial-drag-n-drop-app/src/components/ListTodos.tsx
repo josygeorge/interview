@@ -9,7 +9,7 @@ interface Props {
 
 const ListTodos: React.FC<Props> = ({ todos, setTodos }) => {
   return (
-    <div>
+    <div className='flex justify-evenly w-4/6 flex-wrap'>
       {todos.map((todo) => (
         //here 'todo' is the entire object; not a string type
         /* Listing each Todo as a card with edit and delete functionality*/

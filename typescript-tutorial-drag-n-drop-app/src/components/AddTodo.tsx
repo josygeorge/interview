@@ -9,7 +9,7 @@ interface Props {
 const AddTodo: React.FC<Props> = ({ todo, setTodo, addTodoHandler }) => {
   return (
     <form
-      className='flex w-5/6 relative items-center'
+      className='flex w-2/3 relative items-center'
       onSubmit={addTodoHandler}
     >
       <input

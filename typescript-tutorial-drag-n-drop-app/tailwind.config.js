@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx,html,css}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'todocard': "url('../public/todo-card-photo.webp')"
+      }
+    },
   },
   plugins: [],
 }
