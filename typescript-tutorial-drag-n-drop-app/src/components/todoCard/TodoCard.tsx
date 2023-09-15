@@ -41,7 +41,7 @@ const TodoCard: React.FC<Props> = ({ todo, todos, setTodos }) => {
   return (
     <form
       onSubmit={(e) => editHandler(e, todo.id)}
-      className='flex w-3/5 text-center text-yellow-50 rounded-xl p-5 mt-4 bg-gradient-to-r from-amber-700 to-sky-600'
+      className='flex w-3/5 text-center text-yellow-50 rounded-xl p-5 mt-4 bg-gradient-to-r from-emerald-700 to-teal-800'
     >
       {editFlag ? (
         <input
