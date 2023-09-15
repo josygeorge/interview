@@ -1,6 +1,6 @@
 import React from 'react';
 import { Todo } from '../models/models';
-import TodoCard from './TodoCard';
+import TodoCard from './todoCard/TodoCard';
 
 interface Props {
   todos: Todo[];
