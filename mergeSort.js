@@ -1,4 +1,17 @@
-//unsortedArr = [34, 22, 16, 43, 88, 63, 56]
+unsortedArrDemo = [34, 22, 16, 100, 43, 88, 63, 56]
+//sort() method - JS
+unsortedArrDemo.sort(); // usasge of sort method directly like this would create will produce incorrect result when sorting numbers. 
+console.log(unsortedArrDemo); // 100 is not sorted because the sorting is treated as string sorting.
+
+
+//unsortedArrDemo.sort();
+
+
+///////////////////////////////////////////////
+
+
+
+// using recursive function
 unsortedArr = [43, 32, 56, 22, 63, 11, 88]
 
 console.log(mergeSort(unsortedArr));
