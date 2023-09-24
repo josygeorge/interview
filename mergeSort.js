@@ -1,11 +1,11 @@
 unsortedArrDemo = [34, 22, 16, 100, 43, 88, 63, 56]
 //sort() method - JS
-unsortedArrDemo.sort(); // usasge of sort method directly like this would create will produce incorrect result when sorting numbers. 
-console.log(unsortedArrDemo); // 100 is not sorted because the sorting is treated as string sorting.
+//unsortedArrDemo.sort(); // usasge of sort method directly like this would create will produce incorrect result when sorting numbers. 
+//console.log(unsortedArrDemo); // 100 is not sorted because the sorting is treated as string sorting.
 
 
-//unsortedArrDemo.sort();
-
+unsortedArrDemo.sort((a, b) => a - b);
+console.log(unsortedArrDemo);
 
 ///////////////////////////////////////////////
 
