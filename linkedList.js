@@ -58,6 +58,9 @@ list.add("node3");
 list.add("node4");
 console.log("Initial List:");
 list.printLinkedList();
+console.log("List after adding nodeN1 to tail");
+list.addToTail("nodeN1");
+list.printLinkedList();
 
 
 
