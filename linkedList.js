@@ -41,6 +41,25 @@ class LinkedList {
         }
         current.next = newNode;
     }
+    // function to insert data to linked list at a particular index
+    addAtPosition(data, position) {
+        let newNode = new Node(data);
+        if (position === 1) {
+            newNode.next = this.head;
+            this.head = newNode;
+            return;
+        }
+        let current = this.head;
+        let i = 1;
+        while (i < position - 1 && current) {
+            current = current.next;
+            i++;
+        }
+        if (current) {
+            newNode.next = current.next;
+            current.next = newNode;
+        }
+    }
     //print the linked list
     printLinkedList() {
         let current = this.head;
@@ -60,6 +79,10 @@ console.log("Initial List:");
 list.printLinkedList();
 console.log("List after adding nodeN1 to tail");
 list.addToTail("nodeN1");
+list.addToTail("nodeN2");
+list.printLinkedList();
+console.log("List after adding nodeX at 3rd postion of the list");
+list.addAtPosition("nodeX", 3);
 list.printLinkedList();
 
 
