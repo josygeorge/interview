@@ -28,6 +28,19 @@ class LinkedList {
         this.length++;
         return this;
     }
+    //function to add data to tail
+    addToTail(data) {
+        let newNode = new Node(data);
+        if (this.head === null) {
+            this.head = newNode;
+            return;
+        }
+        let current = this.head;
+        while (current.next !== null) {
+            current = current.next;
+        }
+        current.next = newNode;
+    }
     //print the linked list
     printLinkedList() {
         let current = this.head;
