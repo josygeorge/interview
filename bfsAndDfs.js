@@ -7,7 +7,7 @@ const graph = {
     E: ['B', 'D', 'F'],
     F: ['E'],
 };
-
+console.log("Graph with it's nodes: ", graph);
 // tree representation
 /* 
 A -- B -- C
@@ -38,4 +38,30 @@ function bfs(graph, start) {
 
     return result;
 }
+console.log("Breadth First");
 console.log(bfs(graph, 'A'));
+
+//DFS using a stack for the given graph
+function dfs(graph, start) {
+    const stack = [start];
+    const visited = new Set();
+    const result = [];
+
+    while (stack.length) {
+        const vertex = stack.pop();
+
+        if (!visited.has(vertex)) {
+            visited.add(vertex);
+            result.push(vertex);
+
+            for (const neighbor of graph[vertex]) {
+                stack.push(neighbor);
+            }
+        }
+    }
+
+    return result;
+}
+
+console.log("Depth First");
+console.log(dfs(graph, 'A'));
