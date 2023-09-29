@@ -136,16 +136,16 @@ class DoublyLinkedList {
 }
 document.write("DOUBLY LINKED LIST <br>");
 let dLinkedList = new DoublyLinkedList(6);
-document.write("****** Insert at End:<br>");
+document.write("****** Insert at End; (7, 8, 9):<br>");
 dLinkedList.insertAtEnd(7);
 dLinkedList.insertAtEnd(8);
 dLinkedList.insertAtEnd(9);
 
-document.write("****** Insert at Front:<br>");
+document.write("****** Insert at Front; (22, 33, 44):<br>");
 dLinkedList.insertAtFront(22);
 dLinkedList.insertAtFront(33);
 dLinkedList.insertAtFront(44);
-document.write("****** Remove at an index; eg: 2nd index:<br>");
+document.write("****** Remove at an index; eg.(2nd):<br>");
 dLinkedList.removeAtIndex(2);
-
+document.write("****** Final Doubly Linked List ****** ");
 dLinkedList.printList();
