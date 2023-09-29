@@ -8,7 +8,7 @@ function createNode(value) {
 
 // main class
 class DoublyLinkedList {
-    constructor(value) {
+    constructor(value = null) {
         this.head = {
             value: value,
             next: null,
@@ -16,6 +16,16 @@ class DoublyLinkedList {
         };
         this.tail = this.head;
         this.size = 0;
+    }
+    // inserting at the end of the list
+    insertAtFront(value) {
+        this.size++;
+        let newNode = createNode(value);
+        if (this.head) {
+            newNode.next = this.head;
+            this.head = this.head.previous = newNode;
+        }
+        this.printList();
     }
     // inserting at the end of the list
     insertAtEnd(value) {
@@ -39,9 +49,15 @@ class DoublyLinkedList {
         }
     }
 }
-
-let dLinkedList = new DoublyLinkedList(11);
+document.write("DOUBLY LINKED LIST <br>");
+let dLinkedList = new DoublyLinkedList(6);
+document.write("****** Insert at End:<br>");
 dLinkedList.insertAtEnd(7);
 dLinkedList.insertAtEnd(8);
 dLinkedList.insertAtEnd(9);
+
+document.write("****** Insert at Front:<br>");
+dLinkedList.insertAtFront(22);
+dLinkedList.insertAtFront(33);
+dLinkedList.insertAtFront(44);
 dLinkedList.printList();
