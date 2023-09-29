@@ -18,9 +18,18 @@ class DoublyLinkedList {
     insertAtFront(value) {
         this.size++;
         let newNode = createNode(value);
-        if (this.head) {
-            newNode.next = this.head;
-            this.head = this.head.previous = newNode;
+        // If the list is empty link assign
+        // new node to both head and tail
+        if (this.head == null) {
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        // else add item to the head and unshift head
+        else {
+            if (this.head) {
+                newNode.next = this.head;
+                this.head = this.head.previous = newNode;
+            }
         }
         this.printList();
     }
@@ -45,7 +54,7 @@ class DoublyLinkedList {
         this.printList();
     }
     // Insert node at a given index
-    insertAtIndex(index, value) {
+    /* insertAtIndex(index, value) {
         if (!Number.isInteger(index) || index < 0 || index > this.length + 1) {
             console.log(`Invalid index. Current length is ${this.length}.`);
             return this;
@@ -53,13 +62,13 @@ class DoublyLinkedList {
 
         // If index is 0, prepend
         if (index === 0) {
-            this.prepend(value);
+            this.insertAtFront(value);
             return this;
         }
 
         // If index is equal to this.length, append
         if (index === this.length) {
-            this.append(value);
+            this.insertAtEnd(value);
             return this;
         }
 
@@ -80,7 +89,7 @@ class DoublyLinkedList {
 
         this.length++;
         this.printList();
-    }
+    } */
 
     // Remove a node
     removeAtIndex(index) {
@@ -141,6 +150,7 @@ class DoublyLinkedList {
 }
 document.write("DOUBLY LINKED LIST <br>");
 let dLinkedList = new DoublyLinkedList();
+dLinkedList.insertAtFront(22);
 document.write("****** Insert at End; (7, 8, 9):<br>");
 dLinkedList.insertAtEnd(7);
 dLinkedList.insertAtEnd(8);
@@ -151,7 +161,4 @@ dLinkedList.insertAtFront(22);
 dLinkedList.insertAtFront(33);
 dLinkedList.insertAtFront(44);
 document.write("****** Remove at an index; eg.(2nd):<br>");
-dLinkedList.removeAtIndex(12);
-dLinkedList.insertAtFront(22);
-document.write("****** Final Doubly Linked List ****** ");
-dLinkedList.printList();
+dLinkedList.removeAtIndex(2);
