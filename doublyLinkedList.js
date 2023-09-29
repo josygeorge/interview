@@ -8,13 +8,10 @@ function createNode(value) {
 
 // main class
 class DoublyLinkedList {
-    constructor(value = null) {
-        this.head = {
-            value: value,
-            next: null,
-            previous: null,
-        };
-        this.tail = this.head;
+    // inserting 
+    constructor() {
+        this.head = null;
+        this.tail = null;
         this.size = 0;
     }
     // inserting at the end of the list
@@ -31,16 +28,24 @@ class DoublyLinkedList {
     insertAtEnd(value) {
         this.size++;
         let newNode = createNode(value);
-        if (this.tail) {
-            this.tail.next = newNode;
-            newNode.previous = this.tail;
+        // If the list is empty link assign
+        // new node to both head and tail
+        if (this.head == null) {
+            this.head = newNode;
             this.tail = newNode;
+        }
+        // else add item to the tail and shift tail
+        else {
+            if (this.tail) {
+                newNode.previous = this.tail;
+                this.tail = this.tail.next = newNode;
+            }
+
         }
         this.printList();
     }
-
     // Insert node at a given index
-    insert(index, value) {
+    insertAtIndex(index, value) {
         if (!Number.isInteger(index) || index < 0 || index > this.length + 1) {
             console.log(`Invalid index. Current length is ${this.length}.`);
             return this;
@@ -79,8 +84,8 @@ class DoublyLinkedList {
 
     // Remove a node
     removeAtIndex(index) {
-        if (!Number.isInteger(index) || index < 0 || index > this.length) {
-            console.log(`Invalid index. Current length is ${this.length}.`);
+        if (!Number.isInteger(index) || index < 0 || index > this.size) {
+            console.log(`Invalid index. Current length is ${this.size}.`);
             return this;
         }
 
@@ -89,17 +94,17 @@ class DoublyLinkedList {
             this.head = this.head.next;
             this.head.previous = null;
 
-            this.length--;
+            this.size--;
             this.printList();
             return this;
         }
 
         // Remove tail
-        if (index === this.length - 1) {
+        if (index === this.size - 1) {
             this.tail = this.tail.previous;
             this.tail.next = null;
 
-            this.length--;
+            this.size--;
             this.printList();
             return this;
         }
@@ -116,13 +121,13 @@ class DoublyLinkedList {
         previousNode.next = nextNode;
         nextNode.previous = previousNode;
 
-        this.length--;
+        this.size--;
         this.printList();
         return this;
     }
 
     printList() {
-        document.write("Doubly Linked List is now :</br> ");
+        document.write(`Doubly Linked List is now :  size:${this.size}</br> `);
         let current = this.head;
         while (current) {
             document.write(
@@ -135,7 +140,7 @@ class DoublyLinkedList {
 
 }
 document.write("DOUBLY LINKED LIST <br>");
-let dLinkedList = new DoublyLinkedList(6);
+let dLinkedList = new DoublyLinkedList();
 document.write("****** Insert at End; (7, 8, 9):<br>");
 dLinkedList.insertAtEnd(7);
 dLinkedList.insertAtEnd(8);
@@ -146,6 +151,7 @@ dLinkedList.insertAtFront(22);
 dLinkedList.insertAtFront(33);
 dLinkedList.insertAtFront(44);
 document.write("****** Remove at an index; eg.(2nd):<br>");
-dLinkedList.removeAtIndex(2);
+dLinkedList.removeAtIndex(12);
+dLinkedList.insertAtFront(22);
 document.write("****** Final Doubly Linked List ****** ");
 dLinkedList.printList();
