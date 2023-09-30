@@ -6,10 +6,10 @@ addSix(10); // returns 16
 addSix(21); // returns 27
 */
 function createBase(baseNum) {
-    function inner(n) {
+    function addFn(n) {
         return baseNum + n;
     }
-    return inner;
+    return addFn;
 }
 var addSix = createBase(6);
 console.log(addSix(10)); // returns 16
