@@ -27,3 +27,12 @@ if (Array.isArray(obj)) {
 else {
     console.log("Not an array");
 }
+
+
+// To Pascal Case
+const toPascalCase = str => (str.match(/[a-zA-Z0-9]+/g))
+    .map(d =>
+        `${d.charAt(0).toUpperCase()}${d.slice(1)}`
+    )
+    .join(" ");
+console.log(toPascalCase('hello world'));
