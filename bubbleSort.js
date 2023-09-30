@@ -1,5 +1,5 @@
 // sort an array of numbers
-const numArr = [44, 22, 11, -33, 88, 66];
+const numArr = [44, 222, 181, -33, 0, -1, 88, 66];
 /*
 out of for loop  [44,22,11,33,88,66] swapped=false
 ------- 1st iteration of for loop --------
@@ -32,7 +32,7 @@ bcoz swapped=false, synchronuus execution control will
 exit 'do..while..' loop
 */
 console.log("original unsorted arr", numArr);
-
+// do..while..loop
 function bubbleSort(arr) {
     let swapped;
     do {
@@ -46,8 +46,24 @@ function bubbleSort(arr) {
             }
         }
     } while (swapped);
-
     return arr;
 }
 
-console.log(bubbleSort(numArr));
+console.log("Using Do..While loop", bubbleSort(numArr));
+
+//two-dimensional for loop
+function bsort(numArr) {
+    let i, j;
+    const len = numArr.length;
+    for (i = 0; i < len; i++) {
+        for (j = 0; j < len - i - 1; j++) {
+            if (numArr[j] > numArr[j + 1]) {
+                const temp = numArr[j];
+                numArr[j] = numArr[j + 1];
+                numArr[j + 1] = temp;
+            }
+        }
+    }
+    return numArr;
+}
+console.log("Using 2-dim FOR loop", bsort(numArr));
