@@ -54,9 +54,9 @@ class DoublyLinkedList {
         this.printList();
     }
     // Insert node at a given index
-    /* insertAtIndex(index, value) {
-        if (!Number.isInteger(index) || index < 0 || index > this.length + 1) {
-            console.log(`Invalid index. Current length is ${this.length}.`);
+    insertAtIndex(index, value) {
+        if (!Number.isInteger(index) || index < 0 || index > this.size + 1) {
+            console.log(`Invalid index. Current size is ${this.size}.`);
             return this;
         }
 
@@ -67,15 +67,15 @@ class DoublyLinkedList {
         }
 
         // If index is equal to this.length, append
-        if (index === this.length) {
+        if (index === this.size) {
             this.insertAtEnd(value);
             return this;
         }
 
         // Reach the node at that index
-        let newNode = new Node(value);
+        let newNode = new createNode(value);
         let previousNode = this.head;
-
+        this.size++;
         for (let k = 0; k < index - 1; k++) {
             previousNode = previousNode.next;
         }
@@ -87,9 +87,8 @@ class DoublyLinkedList {
         newNode.previous = previousNode;
         nextNode.previous = newNode;
 
-        this.length++;
         this.printList();
-    } */
+    }
 
     // Remove a node
     removeAtIndex(index) {
@@ -162,3 +161,7 @@ dLinkedList.insertAtFront(33);
 dLinkedList.insertAtFront(44);
 document.write("****** Remove at an index; eg.(2nd):<br>");
 dLinkedList.removeAtIndex(2);
+document.write("****** Insert at an index; eg.(3rd, 77):<br>");
+dLinkedList.insertAtIndex(3, 77);
+document.write("****** Insert at last index; eg.(7th, 69):<br>");
+dLinkedList.insertAtIndex(7, 69);
