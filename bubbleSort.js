@@ -37,7 +37,6 @@ function bubbleSort(arr) {
     let swapped;
     do {
         swapped = false;
-        console.log(swapped);
         for (let i = 0; i < arr.length - 1; i++) {
             if (arr[i] > arr[i + 1]) {
                 const temp = arr[i];
@@ -45,11 +44,7 @@ function bubbleSort(arr) {
                 arr[i + 1] = temp;
                 swapped = true;
             }
-            console.log(i);
         }
-        console.log(arr);
-        console.log('out of for loop');
-        console.log(swapped);
     } while (swapped);
 
     return arr;
