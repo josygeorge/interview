@@ -56,13 +56,20 @@ function bsort(numArr) {
     let i, j;
     const len = numArr.length;
     for (i = 0; i < len; i++) {
+        // to improve on time complexity, include a flag variable, say swapped
+        let swapped = false;
         for (j = 0; j < len - i - 1; j++) {
             if (numArr[j] > numArr[j + 1]) {
                 const temp = numArr[j];
                 numArr[j] = numArr[j + 1];
                 numArr[j + 1] = temp;
+                swapped = true;
             }
         }
+        // when exiting the inner loop, 
+        //if there is no two elements to be swapped in the inner loop
+        // break the total loop; i.e., sorting is done!
+        if (!swapped) break;
     }
     return numArr;
 }
