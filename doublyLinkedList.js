@@ -165,3 +165,5 @@ document.write("****** Insert at an index; eg.(3rd, 77):<br>");
 dLinkedList.insertAtIndex(3, 77);
 document.write("****** Insert at last index; eg.(7th, 69):<br>");
 dLinkedList.insertAtIndex(7, 69);
+document.write("****** Insert at first index; eg.(0th, 99):<br>");
+dLinkedList.insertAtIndex(0, 99);
