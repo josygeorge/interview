@@ -14,3 +14,16 @@ function createBase(baseNum) {
 var addSix = createBase(6);
 console.log(addSix(10)); // returns 16
 console.log(addSix(21)); // returns 27
+
+
+
+
+/* Is an Array */
+const obj = [22, 11, 44, 33, 66, 55, 88];
+//if (Object.prototype.toString.call(obj) === '[object Array]') {
+if (Array.isArray(obj)) {
+    console.log("Array!");
+}
+else {
+    console.log("Not an array");
+}
