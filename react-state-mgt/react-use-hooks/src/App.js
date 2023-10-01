@@ -1,4 +1,4 @@
-import Todo from "./components/useReducer.js/todo";
+import Todo from "./components/useReducer.js/Todos";
 
 function App() {
   return (
