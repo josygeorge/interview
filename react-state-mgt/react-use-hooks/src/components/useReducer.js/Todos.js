@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react'
+import ListTodo from '../ListTodo';
 
-const TODOS_ACTION = {
+export const TODOS_ACTION = {
     ADD_TASK: 'add_task',
     DELETE_TASK: 'delete_task',
     RESET_TASKS: 'reset_tasks',
@@ -48,23 +49,8 @@ const Todos = () => {
             />
             <button onClick={() => dispatch({ type: TODOS_ACTION.RESET_TASKS, payload: initialState })}>Reset tasks</button>
             <hr />
-            {todos.map(todo =>
-                <li key={todo.id}>
-                    {todo.name}
-                    <span>
-                        <button
-                            onClick={() =>
-                                dispatch(
-                                    {
-                                        type: TODOS_ACTION.DELETE_TASK,
-                                        payload: todo.id
-                                    }
-                                )
-                            }>
-                            Delete
-                        </button>
-                    </span>
-                </li>)}
+            {/* component listing todos */}
+            <ListTodo todos={todos} dispatch={dispatch} />
         </div>
     )
 }
