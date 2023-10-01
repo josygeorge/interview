@@ -1,18 +1,21 @@
 import React, { useReducer } from 'react'
 
-const ACTION_TYPES = {
-    ADDTASK: 'add_task',
+const TODOS_ACTION = {
+    ADD_TASK: 'add_task',
+    DELETE_TASK: 'delete_task',
 }
 
 const initialState = []
 
 function reducer(state, action) {
     switch (action.type) {
-        case 'ADD_TASK':
+        case TODOS_ACTION.ADD_TASK:
             return [...state, {
                 id: state.length + 1,
                 name: action.payload
-            }]
+            }];
+        case TODOS_ACTION.DELETE_TASK:
+            return state.filter(d => d.id !== action.payload)
         default: return state;
     }
 }
@@ -29,12 +32,28 @@ const Todos = () => {
                 onBlur={
                     (e) =>
                         dispatch(
-                            { type: 'ADD_TASK', payload: e.target.value }
+                            { type: TODOS_ACTION.ADD_TASK, payload: e.target.value }
                         )
                 }
             />
             <hr />
-            {todos.map(todo => <li key={todo.id}>{todo.name}</li>)}
+            {todos.map(todo =>
+                <li key={todo.id}>
+                    {todo.name}
+                    <span>
+                        <button
+                            onClick={() =>
+                                dispatch(
+                                    {
+                                        type: TODOS_ACTION.DELETE_TASK,
+                                        payload: todo.id
+                                    }
+                                )
+                            }>
+                            Delete
+                        </button>
+                    </span>
+                </li>)}
         </div>
     )
 }
