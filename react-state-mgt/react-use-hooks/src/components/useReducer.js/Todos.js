@@ -3,13 +3,14 @@ import React, { useReducer } from 'react'
 const TODOS_ACTION = {
     ADD_TASK: 'add_task',
     DELETE_TASK: 'delete_task',
+    RESET_TASKS: 'reset_tasks',
 }
 
 const initialState = []
 
 function init(initialState) {
-    const result = [...initialState, { id: 1, name: 'reading' }]
-    return result;
+
+    return initialState;
 }
 
 function reducer(state, action) {
@@ -20,7 +21,9 @@ function reducer(state, action) {
                 name: action.payload
             }];
         case TODOS_ACTION.DELETE_TASK:
-            return state.filter(d => d.id !== action.payload)
+            return state.filter(d => d.id !== action.payload);
+        case TODOS_ACTION.RESET_TASKS:
+            return init(action.payload);
         default: return state;
     }
 }
@@ -33,7 +36,7 @@ const Todos = () => {
         <div>
             <h1>Todo app</h1>
             <h4>Todo list {todos.length}</h4>
-            Add new task:
+            Add new todo task:
             <input
                 type="text"
                 onBlur={
@@ -43,6 +46,7 @@ const Todos = () => {
                         )
                 }
             />
+            <button onClick={() => dispatch({ type: TODOS_ACTION.RESET_TASKS, payload: initialState })}>Reset tasks</button>
             <hr />
             {todos.map(todo =>
                 <li key={todo.id}>
