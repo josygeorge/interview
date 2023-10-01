@@ -7,6 +7,11 @@ const TODOS_ACTION = {
 
 const initialState = []
 
+function init(initialState) {
+    const result = [...initialState, { id: 1, name: 'reading' }]
+    return result;
+}
+
 function reducer(state, action) {
     switch (action.type) {
         case TODOS_ACTION.ADD_TASK:
@@ -20,8 +25,10 @@ function reducer(state, action) {
     }
 }
 
+
+// MAIN Function
 const Todos = () => {
-    const [todos, dispatch] = useReducer(reducer, initialState)
+    const [todos, dispatch] = useReducer(reducer, initialState, init)
     return (
         <div>
             <h1>Todo app</h1>
