@@ -2,18 +2,20 @@
 // Returns the longest repeating non-overlapping
 // substring in str
 function longestRepeatedSubstring(str) {
+
     let n = str.length;
     let LCSRe = new Array(n + 1);
-    console.log(LCSRe);
+    console.log(str[0]);
     for (let i = 0; i < n + 1; i++) {
         LCSRe[i] = new Array(n + 1);
     }
+    console.log(LCSRe);
     for (let i = 0; i < n + 1; i++) {
         for (let j = 0; j < n + 1; j++) {
             LCSRe[i][j] = 0;
         }
     }
-
+    console.log(LCSRe);
     let res = ""; // To store result
     let res_length = 0; // To store length of result
 
@@ -55,6 +57,6 @@ function longestRepeatedSubstring(str) {
 }
 
 // Driver program to test the above function
-let str = "bananasarebanana";
+let str = "bananaarebananas";
 /* let str = "geeksforgeeks"; */
 document.write(longestRepeatedSubstring(str));
