@@ -4,6 +4,7 @@
 function longestRepeatedSubstring(str) {
     let n = str.length;
     let LCSRe = new Array(n + 1);
+    console.log(LCSRe);
     for (let i = 0; i < n + 1; i++) {
         LCSRe[i] = new Array(n + 1);
     }
@@ -54,6 +55,6 @@ function longestRepeatedSubstring(str) {
 }
 
 // Driver program to test the above function
-let str = "bananasnana";
+let str = "bananasarebanana";
 /* let str = "geeksforgeeks"; */
 document.write(longestRepeatedSubstring(str));
