@@ -1,4 +1,4 @@
-/* function firstRepeating(str) {
+function firstRepeating(str) {
     const n = str.length;
     let ans = '\0';
     let index = Infinity;
@@ -20,7 +20,7 @@
     }
 
     return ans;
-} */
+}
 
 
 
@@ -29,7 +29,7 @@
 
 // This function prints the first repeated
 // character in str[]
-function firstRepeating(str) {
+/* function firstRepeating(str) {
 
     // Creates an empty hashset
     let h = new Set();
@@ -48,7 +48,7 @@ function firstRepeating(str) {
             h.add(c);
     }
     return '\0';
-}
+} */
 
 // Driver code
 //let str = "ilovejavascript";
