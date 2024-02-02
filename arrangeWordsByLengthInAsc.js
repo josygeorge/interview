@@ -10,7 +10,6 @@ const str = 'react is a javascript library to build scalable applications';
 // join the arr to str
 
 function arrangeString(str) {
-    //return str.split(" ");
     return str.split(" ").sort((a, b) => a.length - b.length).join(" ");
 }
 console.log(arrangeString(str));
