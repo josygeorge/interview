@@ -131,3 +131,49 @@ function sumTwo(nums, target) {
 };
 
 console.log(sumTwo([3, 2, 4, 9], 13));
+
+/* 
+<li></li>
+<li></li>
+<li></li>
+*/
+
+//JavaScript code for the "Best Time to Buy and Sell Stock" algorithm:
+
+function maxProfitStock(prices) {
+    // Initialize maxProfit and minPrice
+    let minPrice = Infinity;  // we want to track the minimum price seen so far
+    let maxProfit = 0;  // initially, there's no profit
+    // loop though prices
+    for (let price of prices) {
+        //Update the minimum price in the stock
+        minPrice = Math.min(price, minPrice);
+        // calculate the profit today 
+        profitToday = price - minPrice;
+
+        // Update the max profit from the profitToday
+        maxProfit = Math.max(profitToday, maxProfit);
+    }
+    return maxProfit;
+}
+
+function maxProfitStock(prices) {
+    let sellIdx = prices.length - 1;
+    let maxProfit = 0;
+    // loop reverse with prices.length
+    for (let buyIdx = prices.length - 1; buyIdx >= 0; buyIdx--) {
+        let buyVal = prices[buyIdx];
+        let sellVal = prices[sellIdx];
+
+        if (buyVal - sellVal >= 0) {
+            // sellVal should be greater for a profilt, otherwise update sellIdx
+            sellIdx = buyIdx;
+        } else {
+            let currPrice = sellVal - buyVal;
+            maxProfit = Math.max(maxProfit, currPrice);
+        }
+    }
+    return maxProfit;
+}
+
+console.log(maxProfitStock([7, 1, 5, 3, 6, 4]));
